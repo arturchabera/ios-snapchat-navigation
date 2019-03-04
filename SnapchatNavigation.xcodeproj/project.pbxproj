@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		756FFD04222D377B00830E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD03222D377B00830E3C /* AppDelegate.swift */; };
 		756FFD06222D377B00830E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD05222D377B00830E3C /* ViewController.swift */; };
-		756FFD09222D377B00830E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD07222D377B00830E3C /* Main.storyboard */; };
 		756FFD0B222D377B00830E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD0A222D377B00830E3C /* Assets.xcassets */; };
 		756FFD0E222D377B00830E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD0C222D377B00830E3C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		756FFD00222D377B00830E3C /* SnapchatNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756FFD03222D377B00830E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756FFD05222D377B00830E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		756FFD08222D377B00830E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		756FFD0A222D377B00830E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		756FFD0D222D377B00830E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		756FFD0F222D377B00830E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,12 +54,19 @@
 			children = (
 				756FFD03222D377B00830E3C /* AppDelegate.swift */,
 				756FFD05222D377B00830E3C /* ViewController.swift */,
-				756FFD07222D377B00830E3C /* Main.storyboard */,
+				756FFD15222D5F3B00830E3C /* Supporting Files */,
+			);
+			path = SnapchatNavigation;
+			sourceTree = "<group>";
+		};
+		756FFD15222D5F3B00830E3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				756FFD0A222D377B00830E3C /* Assets.xcassets */,
 				756FFD0C222D377B00830E3C /* LaunchScreen.storyboard */,
 				756FFD0F222D377B00830E3C /* Info.plist */,
 			);
-			path = SnapchatNavigation;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +129,6 @@
 			files = (
 				756FFD0E222D377B00830E3C /* LaunchScreen.storyboard in Resources */,
 				756FFD0B222D377B00830E3C /* Assets.xcassets in Resources */,
-				756FFD09222D377B00830E3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		756FFD07222D377B00830E3C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				756FFD08222D377B00830E3C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		756FFD0C222D377B00830E3C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,7 +280,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RH65Z3DQ4;
-				INFOPLIST_FILE = SnapchatNavigation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SnapchatNavigation/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +298,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RH65Z3DQ4;
-				INFOPLIST_FILE = SnapchatNavigation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SnapchatNavigation/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
