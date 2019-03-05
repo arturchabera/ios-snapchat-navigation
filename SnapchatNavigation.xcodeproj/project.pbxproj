@@ -11,6 +11,14 @@
 		756FFD06222D377B00830E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD05222D377B00830E3C /* ViewController.swift */; };
 		756FFD0B222D377B00830E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD0A222D377B00830E3C /* Assets.xcassets */; };
 		756FFD0E222D377B00830E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD0C222D377B00830E3C /* LaunchScreen.storyboard */; };
+		756FFD22222E50DF00830E3C /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD20222E50DF00830E3C /* LeftViewController.swift */; };
+		756FFD23222E50DF00830E3C /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD21222E50DF00830E3C /* LeftViewController.xib */; };
+		756FFD28222E50FA00830E3C /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD26222E50FA00830E3C /* RightViewController.swift */; };
+		756FFD29222E50FA00830E3C /* RightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD27222E50FA00830E3C /* RightViewController.xib */; };
+		756FFD2C222E510F00830E3C /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD2A222E510F00830E3C /* CenterViewController.swift */; };
+		756FFD2D222E510F00830E3C /* CenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD2B222E510F00830E3C /* CenterViewController.xib */; };
+		756FFD2F222E5D7000830E3C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD2E222E5D7000830E3C /* UIView.swift */; };
+		756FFD31222E5E7000830E3C /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD30222E5E7000830E3C /* UIScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		756FFD0A222D377B00830E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		756FFD0D222D377B00830E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		756FFD0F222D377B00830E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		756FFD20222E50DF00830E3C /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		756FFD21222E50DF00830E3C /* LeftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
+		756FFD26222E50FA00830E3C /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		756FFD27222E50FA00830E3C /* RightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightViewController.xib; sourceTree = "<group>"; };
+		756FFD2A222E510F00830E3C /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		756FFD2B222E510F00830E3C /* CenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterViewController.xib; sourceTree = "<group>"; };
+		756FFD2E222E5D7000830E3C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		756FFD30222E5E7000830E3C /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				756FFD03222D377B00830E3C /* AppDelegate.swift */,
-				756FFD05222D377B00830E3C /* ViewController.swift */,
+				756FFD18222E503200830E3C /* Extensions */,
+				756FFD17222E501200830E3C /* Navigation */,
+				756FFD16222E500500830E3C /* Panels */,
 				756FFD15222D5F3B00830E3C /* Supporting Files */,
 			);
 			path = SnapchatNavigation;
@@ -67,6 +85,60 @@
 				756FFD0F222D377B00830E3C /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		756FFD16222E500500830E3C /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				756FFD1F222E50CA00830E3C /* Right */,
+				756FFD1E222E50AE00830E3C /* Center */,
+				756FFD1D222E509E00830E3C /* Left */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		756FFD17222E501200830E3C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				756FFD05222D377B00830E3C /* ViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		756FFD18222E503200830E3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				756FFD2E222E5D7000830E3C /* UIView.swift */,
+				756FFD30222E5E7000830E3C /* UIScrollView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		756FFD1D222E509E00830E3C /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				756FFD20222E50DF00830E3C /* LeftViewController.swift */,
+				756FFD21222E50DF00830E3C /* LeftViewController.xib */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		756FFD1E222E50AE00830E3C /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				756FFD2A222E510F00830E3C /* CenterViewController.swift */,
+				756FFD2B222E510F00830E3C /* CenterViewController.xib */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		756FFD1F222E50CA00830E3C /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				756FFD26222E50FA00830E3C /* RightViewController.swift */,
+				756FFD27222E50FA00830E3C /* RightViewController.xib */,
+			);
+			path = Right;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +199,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756FFD2D222E510F00830E3C /* CenterViewController.xib in Resources */,
 				756FFD0E222D377B00830E3C /* LaunchScreen.storyboard in Resources */,
+				756FFD29222E50FA00830E3C /* RightViewController.xib in Resources */,
+				756FFD23222E50DF00830E3C /* LeftViewController.xib in Resources */,
 				756FFD0B222D377B00830E3C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756FFD22222E50DF00830E3C /* LeftViewController.swift in Sources */,
+				756FFD28222E50FA00830E3C /* RightViewController.swift in Sources */,
 				756FFD06222D377B00830E3C /* ViewController.swift in Sources */,
 				756FFD04222D377B00830E3C /* AppDelegate.swift in Sources */,
+				756FFD2F222E5D7000830E3C /* UIView.swift in Sources */,
+				756FFD31222E5E7000830E3C /* UIScrollView.swift in Sources */,
+				756FFD2C222E510F00830E3C /* CenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
