@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let centerPanel = CenterViewController()
         let leftPanel = LeftViewController()
 
-        scrollView = UIScrollView.makeHorizontalFlow(
+        scrollView = UIScrollView.makeHorizontal(
             with: [leftPanel, centerPanel, rightPanel],
             in: self
         )

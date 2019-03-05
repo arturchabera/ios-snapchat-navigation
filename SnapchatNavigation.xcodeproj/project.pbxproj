@@ -19,6 +19,7 @@
 		756FFD2D222E510F00830E3C /* CenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD2B222E510F00830E3C /* CenterViewController.xib */; };
 		756FFD2F222E5D7000830E3C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD2E222E5D7000830E3C /* UIView.swift */; };
 		756FFD31222E5E7000830E3C /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD30222E5E7000830E3C /* UIScrollView.swift */; };
+		756FFD33222E895400830E3C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD32222E895400830E3C /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		756FFD2B222E510F00830E3C /* CenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterViewController.xib; sourceTree = "<group>"; };
 		756FFD2E222E5D7000830E3C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		756FFD30222E5E7000830E3C /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		756FFD32222E895400830E3C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				756FFD2E222E5D7000830E3C /* UIView.swift */,
 				756FFD30222E5E7000830E3C /* UIScrollView.swift */,
+				756FFD32222E895400830E3C /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				756FFD04222D377B00830E3C /* AppDelegate.swift in Sources */,
 				756FFD2F222E5D7000830E3C /* UIView.swift in Sources */,
 				756FFD31222E5E7000830E3C /* UIScrollView.swift in Sources */,
+				756FFD33222E895400830E3C /* UIViewController.swift in Sources */,
 				756FFD2C222E510F00830E3C /* CenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

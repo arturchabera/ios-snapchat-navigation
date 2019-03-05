@@ -9,28 +9,39 @@
 import UIKit
 
 extension UIScrollView {
-    static func makeHorizontalFlow(with horizontalControllers: [UIViewController], in parent: UIViewController) -> UIScrollView {
+
+    static func make() -> UIScrollView {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }
+
+
+    static func makeHorizontal(with horizontalControllers: [UIViewController], in parent: UIViewController) -> UIScrollView {
+        let scrollView = UIScrollView.make()
+
+        func add(_ child: UIViewController, withOffset offset: CGFloat) {
+            parent.addChild(child)
+            scrollView.addSubview(child.view)
+            child.didMove(toParent: parent)
+            child.view.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                child.view.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+                child.view.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
+                child.view.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: offset)
+                ])
+        }
 
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
 
-        for controller in horizontalControllers.enumerated() {
-            let xPosition = CGFloat(controller.offset) * width
-            parent.addChild(controller.element)
-            scrollView.addSubview(controller.element.view)
-            controller.element.didMove(toParent: parent)
-            controller.element.view.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                controller.element.view.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-                controller.element.view.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
-                controller.element.view.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: xPosition)
-                ])
+        for (index, controller) in horizontalControllers.enumerated() {
+            let xPosition = CGFloat(index) * width
+            add(controller, withOffset: xPosition)
         }
 
         scrollView.contentSize = CGSize(width: width * CGFloat(horizontalControllers.count), height: height)
