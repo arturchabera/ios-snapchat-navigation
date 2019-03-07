@@ -9,8 +9,7 @@
 import UIKit
 
 extension UIScrollView {
-
-    static func make() -> UIScrollView {
+    fileprivate static func make() -> UIScrollView {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
         scrollView.isPagingEnabled = true
@@ -19,7 +18,6 @@ extension UIScrollView {
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }
-
 
     static func makeHorizontal(with horizontalControllers: [UIViewController], in parent: UIViewController) -> UIScrollView {
         let scrollView = UIScrollView.make()
