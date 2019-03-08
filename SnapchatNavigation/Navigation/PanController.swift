@@ -9,13 +9,13 @@
 import UIKit
 
 protocol PanControllerDelegate: class {
-    func present(_ panel: Panels)
-    func view(_ panel: Panels) -> UIView
+    func present(_ panel: Panel)
+    func view(_ panel: Panel) -> UIView
 }
 
 class PanController: UIViewController {
 
-    private var horizontalDirection: Panels = .center
+    private var horizontalDirection: Panel = .center
     private var originalCenter = CGPoint()
     private var topPanelCenter = CGPoint()
     private var bottomPanelCenter = CGPoint()

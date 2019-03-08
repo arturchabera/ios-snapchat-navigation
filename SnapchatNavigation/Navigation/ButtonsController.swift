@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ButtonsDelegate: class {
+    func scroll(to panel: Panel)
+}
+
 class ButtonsController: UIViewController {
+
+    weak var delegate: ButtonsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

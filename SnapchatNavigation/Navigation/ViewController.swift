@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Panels {
+enum Panel {
     case top, bottom, left, center, camera, right
 }
 
@@ -97,12 +97,13 @@ class ViewController: UIViewController {
             ])
 
         buttonsController = ButtonsController()
+        buttonsController.delegate = self
         addChild(buttonsController, toContainer: buttonsContainer)
     }
 }
 
 extension ViewController: PanControllerDelegate {
-    func present(_ panel: Panels) {
+    func present(_ panel: Panel) {
         switch panel {
         case .bottom:
             bottomContainer.center = view.center
@@ -120,12 +121,23 @@ extension ViewController: PanControllerDelegate {
         }
     }
 
-    func view(_ panel: Panels) -> UIView {
+    func view(_ panel: Panel) -> UIView {
         switch panel {
         case .center: return scrollContainer
         case .top: return topContainer
         case .bottom: return bottomContainer
         default: return centerContainer
+        }
+    }
+}
+
+extension ViewController: ButtonsDelegate {
+    func scroll(to panel: Panel) {
+        switch panel {
+        case .left: scrollView.setContentOffset(.zero, animated: true)
+        case .right: scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * 2, y: 0), animated: true)
+        case .center: scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width, y: 0), animated: true)
+        default: break
         }
     }
 }
