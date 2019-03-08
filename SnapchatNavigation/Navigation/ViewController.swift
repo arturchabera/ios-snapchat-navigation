@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Panels {
+enum Panel {
     case top, bottom, left, center, camera, right
 }
 
@@ -27,6 +27,12 @@ class ViewController: UIViewController {
     }
 
     private func setupUI() {
+        setupHorizontalViews()
+        setupTopView()
+        setupBottomView()
+    }
+
+    private func setupHorizontalViews() {
         centerContainer = UIView()
         view.addSubview(centerContainer)
         centerContainer.fit(to: view)
@@ -52,7 +58,9 @@ class ViewController: UIViewController {
         scrollView = UIScrollView.makeHorizontal(with: horizontalControllers, in: self)
         scrollContainer.addSubview(scrollView)
         scrollView.fit(to: scrollContainer)
+    }
 
+    private func setupTopView() {
         topContainer = UIView()
         view.insertSubview(topContainer, belowSubview: centerContainer)
         topContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +73,9 @@ class ViewController: UIViewController {
 
         let topController = TopViewController()
         addChild(topController, toContainer: topContainer)
+    }
 
+    private func setupBottomView() {
         bottomContainer = UIView()
         view.insertSubview(bottomContainer, aboveSubview: scrollView)
         bottomContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -80,11 +90,10 @@ class ViewController: UIViewController {
         let bottomController = BottomViewController()
         addChild(bottomController, toContainer: bottomContainer)
     }
-
 }
 
 extension ViewController: PanControllerDelegate {
-    func present(_ panel: Panels) {
+    func present(_ panel: Panel) {
         switch panel {
         case .bottom:
             bottomContainer.center = view.center
@@ -102,7 +111,7 @@ extension ViewController: PanControllerDelegate {
         }
     }
 
-    func view(_ panel: Panels) -> UIView {
+    func view(_ panel: Panel) -> UIView {
         switch panel {
         case .center: return scrollContainer
         case .top: return topContainer
