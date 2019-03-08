@@ -26,6 +26,7 @@
 		756FFD2F222E5D7000830E3C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD2E222E5D7000830E3C /* UIView.swift */; };
 		756FFD31222E5E7000830E3C /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD30222E5E7000830E3C /* UIScrollView.swift */; };
 		756FFD35222EA12E00830E3C /* PanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD34222EA12E00830E3C /* PanController.swift */; };
+		75FBB727223271B4004BD2CE /* ButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBB726223271B4004BD2CE /* ButtonsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		756FFD2E222E5D7000830E3C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		756FFD30222E5E7000830E3C /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		756FFD34222EA12E00830E3C /* PanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanController.swift; sourceTree = "<group>"; };
+		75FBB726223271B4004BD2CE /* ButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				756FFD05222D377B00830E3C /* ViewController.swift */,
 				756FFD34222EA12E00830E3C /* PanController.swift */,
+				75FBB726223271B4004BD2CE /* ButtonsController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				756FFD28222E50FA00830E3C /* RightViewController.swift in Sources */,
 				75603F1A2230EDCD000D3976 /* LayoutConstants.swift in Sources */,
 				755A16FE222FF18000B854CA /* UIViewController.swift in Sources */,
+				75FBB727223271B4004BD2CE /* ButtonsController.swift in Sources */,
 				756FFD06222D377B00830E3C /* ViewController.swift in Sources */,
 				755A16FB222FF10200B854CA /* TopViewController.swift in Sources */,
 				756FFD04222D377B00830E3C /* AppDelegate.swift in Sources */,

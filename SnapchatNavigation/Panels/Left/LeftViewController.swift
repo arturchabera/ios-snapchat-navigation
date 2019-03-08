@@ -10,9 +10,12 @@ import UIKit
 
 class LeftViewController: UIViewController {
 
+    @IBOutlet weak var containerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .yellow
+        view.backgroundColor = .clear
+        containerView.layer.cornerRadius = 16.0
+        containerView.clipsToBounds = true
     }
 }

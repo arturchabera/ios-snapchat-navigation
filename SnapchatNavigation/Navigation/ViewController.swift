@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     private var centerContainer: UIView!
     private var scrollContainer: UIView!
     private var bottomContainer: UIView!
+    private var buttonsContainer: UIView!
+    private var buttonsController: ButtonsController!
 
     private var scrollView: UIScrollView!
 
@@ -24,6 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        setupButtonsContainer()
     }
 
     private func setupUI() {
@@ -81,6 +84,21 @@ class ViewController: UIViewController {
         addChild(bottomController, toContainer: bottomContainer)
     }
 
+    private func setupButtonsContainer() {
+        buttonsContainer = UIView()
+        view.insertSubview(buttonsContainer, aboveSubview: scrollView)
+        buttonsContainer.translatesAutoresizingMaskIntoConstraints = false
+        let bottomDistance: CGFloat = Layout.distanceFromBottom
+        NSLayoutConstraint.activate([
+            buttonsContainer.widthAnchor.constraint(equalTo: view.widthAnchor),
+            buttonsContainer.heightAnchor.constraint(equalToConstant: Layout.buttonContainerHeight),
+            buttonsContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonsContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottomDistance)
+            ])
+
+        buttonsController = ButtonsController()
+        addChild(buttonsController, toContainer: buttonsContainer)
+    }
 }
 
 extension ViewController: PanControllerDelegate {

@@ -14,6 +14,5 @@ extension UIViewController {
         addChild(controller)
         container.addSubview(subView)
         controller.didMove(toParent: self)
-        subView.fit(to: container)
     }
 }
