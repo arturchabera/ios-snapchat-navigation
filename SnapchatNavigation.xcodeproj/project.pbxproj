@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		755A16F7222FF0F400B854CA /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A16F5222FF0F400B854CA /* BottomViewController.swift */; };
+		755A16F8222FF0F400B854CA /* BottomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755A16F6222FF0F400B854CA /* BottomViewController.xib */; };
+		755A16FB222FF10200B854CA /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A16F9222FF10200B854CA /* TopViewController.swift */; };
+		755A16FC222FF10200B854CA /* TopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755A16FA222FF10200B854CA /* TopViewController.xib */; };
+		755A16FE222FF18000B854CA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A16FD222FF18000B854CA /* UIViewController.swift */; };
+		75603F1A2230EDCD000D3976 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75603F192230EDCD000D3976 /* LayoutConstants.swift */; };
 		756FFD04222D377B00830E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD03222D377B00830E3C /* AppDelegate.swift */; };
 		756FFD06222D377B00830E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD05222D377B00830E3C /* ViewController.swift */; };
 		756FFD0B222D377B00830E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD0A222D377B00830E3C /* Assets.xcassets */; };
@@ -19,9 +25,16 @@
 		756FFD2D222E510F00830E3C /* CenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756FFD2B222E510F00830E3C /* CenterViewController.xib */; };
 		756FFD2F222E5D7000830E3C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD2E222E5D7000830E3C /* UIView.swift */; };
 		756FFD31222E5E7000830E3C /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD30222E5E7000830E3C /* UIScrollView.swift */; };
+		756FFD35222EA12E00830E3C /* PanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756FFD34222EA12E00830E3C /* PanController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		755A16F5222FF0F400B854CA /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
+		755A16F6222FF0F400B854CA /* BottomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomViewController.xib; sourceTree = "<group>"; };
+		755A16F9222FF10200B854CA /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		755A16FA222FF10200B854CA /* TopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewController.xib; sourceTree = "<group>"; };
+		755A16FD222FF18000B854CA /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		75603F192230EDCD000D3976 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		756FFD00222D377B00830E3C /* SnapchatNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756FFD03222D377B00830E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756FFD05222D377B00830E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +49,7 @@
 		756FFD2B222E510F00830E3C /* CenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterViewController.xib; sourceTree = "<group>"; };
 		756FFD2E222E5D7000830E3C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		756FFD30222E5E7000830E3C /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		756FFD34222EA12E00830E3C /* PanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +63,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		755A16F3222FF0D300B854CA /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				755A16F9222FF10200B854CA /* TopViewController.swift */,
+				755A16FA222FF10200B854CA /* TopViewController.xib */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		755A16F4222FF0DF00B854CA /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				755A16F5222FF0F400B854CA /* BottomViewController.swift */,
+				755A16F6222FF0F400B854CA /* BottomViewController.xib */,
+			);
+			path = Bottom;
+			sourceTree = "<group>";
+		};
+		75603F182230EDBB000D3976 /* Traits */ = {
+			isa = PBXGroup;
+			children = (
+				75603F192230EDCD000D3976 /* LayoutConstants.swift */,
+			);
+			path = Traits;
+			sourceTree = "<group>";
+		};
 		756FFCF7222D377B00830E3C = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				756FFD03222D377B00830E3C /* AppDelegate.swift */,
+				75603F182230EDBB000D3976 /* Traits */,
 				756FFD18222E503200830E3C /* Extensions */,
 				756FFD17222E501200830E3C /* Navigation */,
 				756FFD16222E500500830E3C /* Panels */,
@@ -90,6 +131,8 @@
 		756FFD16222E500500830E3C /* Panels */ = {
 			isa = PBXGroup;
 			children = (
+				755A16F4222FF0DF00B854CA /* Bottom */,
+				755A16F3222FF0D300B854CA /* Top */,
 				756FFD1F222E50CA00830E3C /* Right */,
 				756FFD1E222E50AE00830E3C /* Center */,
 				756FFD1D222E509E00830E3C /* Left */,
@@ -101,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				756FFD05222D377B00830E3C /* ViewController.swift */,
+				756FFD34222EA12E00830E3C /* PanController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -110,6 +154,7 @@
 			children = (
 				756FFD2E222E5D7000830E3C /* UIView.swift */,
 				756FFD30222E5E7000830E3C /* UIScrollView.swift */,
+				755A16FD222FF18000B854CA /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,9 +246,11 @@
 			files = (
 				756FFD2D222E510F00830E3C /* CenterViewController.xib in Resources */,
 				756FFD0E222D377B00830E3C /* LaunchScreen.storyboard in Resources */,
+				755A16FC222FF10200B854CA /* TopViewController.xib in Resources */,
 				756FFD29222E50FA00830E3C /* RightViewController.xib in Resources */,
 				756FFD23222E50DF00830E3C /* LeftViewController.xib in Resources */,
 				756FFD0B222D377B00830E3C /* Assets.xcassets in Resources */,
+				755A16F8222FF0F400B854CA /* BottomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +262,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				756FFD22222E50DF00830E3C /* LeftViewController.swift in Sources */,
+				756FFD35222EA12E00830E3C /* PanController.swift in Sources */,
 				756FFD28222E50FA00830E3C /* RightViewController.swift in Sources */,
+				75603F1A2230EDCD000D3976 /* LayoutConstants.swift in Sources */,
+				755A16FE222FF18000B854CA /* UIViewController.swift in Sources */,
 				756FFD06222D377B00830E3C /* ViewController.swift in Sources */,
+				755A16FB222FF10200B854CA /* TopViewController.swift in Sources */,
 				756FFD04222D377B00830E3C /* AppDelegate.swift in Sources */,
+				755A16F7222FF0F400B854CA /* BottomViewController.swift in Sources */,
 				756FFD2F222E5D7000830E3C /* UIView.swift in Sources */,
 				756FFD31222E5E7000830E3C /* UIScrollView.swift in Sources */,
 				756FFD2C222E510F00830E3C /* CenterViewController.swift in Sources */,

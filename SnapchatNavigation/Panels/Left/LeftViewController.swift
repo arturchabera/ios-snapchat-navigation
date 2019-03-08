@@ -13,6 +13,6 @@ class LeftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .yellow
     }
 }
