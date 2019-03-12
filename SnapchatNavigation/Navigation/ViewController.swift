@@ -63,7 +63,6 @@ class ViewController: UIViewController {
         scrollView.delegate = self
         scrollContainer.addSubview(scrollView)
         scrollView.fit(to: scrollContainer)
-        scrollContainer.clipsToBounds = true
     }
 
     private func setupTopView() {
