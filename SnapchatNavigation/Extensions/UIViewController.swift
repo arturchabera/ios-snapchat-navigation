@@ -15,5 +15,6 @@ extension UIViewController {
         container.addSubview(subView)
         controller.didMove(toParent: self)
         subView.fit(to: container)
+        container.clipsToBounds = true
     }
 }

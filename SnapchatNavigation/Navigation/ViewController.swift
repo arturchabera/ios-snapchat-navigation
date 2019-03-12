@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Panels {
+enum Panel {
     case top, bottom, left, center, camera, right
 }
 
@@ -17,8 +17,11 @@ class ViewController: UIViewController {
     private var centerContainer: UIView!
     private var scrollContainer: UIView!
     private var bottomContainer: UIView!
+    private var buttonsContainer: UIView!
+    private var buttonsController: ButtonsController!
 
     private var scrollView: UIScrollView!
+    private var shouldAnimate: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,13 @@ class ViewController: UIViewController {
     }
 
     private func setupUI() {
+        setupHorizontalViews()
+        setupTopView()
+        setupBottomView()
+        setupButtonsContainer()
+    }
+
+    private func setupHorizontalViews() {
         centerContainer = UIView()
         view.addSubview(centerContainer)
         centerContainer.fit(to: view)
@@ -50,9 +60,13 @@ class ViewController: UIViewController {
         ]
 
         scrollView = UIScrollView.makeHorizontal(with: horizontalControllers, in: self)
+        scrollView.delegate = self
         scrollContainer.addSubview(scrollView)
         scrollView.fit(to: scrollContainer)
+        scrollContainer.clipsToBounds = true
+    }
 
+    private func setupTopView() {
         topContainer = UIView()
         view.insertSubview(topContainer, belowSubview: centerContainer)
         topContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -64,8 +78,11 @@ class ViewController: UIViewController {
             ])
 
         let topController = TopViewController()
+        topController.delegate = self
         addChild(topController, toContainer: topContainer)
+    }
 
+    private func setupBottomView() {
         bottomContainer = UIView()
         view.insertSubview(bottomContainer, aboveSubview: scrollView)
         bottomContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -78,21 +95,38 @@ class ViewController: UIViewController {
 
 
         let bottomController = BottomViewController()
+        bottomController.delegate = self
         addChild(bottomController, toContainer: bottomContainer)
     }
 
+    private func setupButtonsContainer() {
+        buttonsContainer = UIView()
+        view.insertSubview(buttonsContainer, aboveSubview: scrollView)
+        buttonsContainer.translatesAutoresizingMaskIntoConstraints = false
+        let bottomDistance: CGFloat = Layout.distanceFromBottom
+        NSLayoutConstraint.activate([
+            buttonsContainer.widthAnchor.constraint(equalTo: view.widthAnchor),
+            buttonsContainer.heightAnchor.constraint(equalToConstant: Layout.buttonContainerHeight),
+            buttonsContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonsContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottomDistance)
+            ])
+
+        buttonsController = ButtonsController()
+        buttonsController.delegate = self
+        addChild(buttonsController, toContainer: buttonsContainer)
+    }
 }
 
 extension ViewController: PanControllerDelegate {
-    func present(_ panel: Panels) {
+    func present(_ panel: Panel) {
         switch panel {
         case .bottom:
             bottomContainer.center = view.center
-            scrollView.center.y = view.center.y - view.frame.height
+            scrollContainer.center.y = view.center.y - view.frame.height
             centerContainer.center.y = view.center.y - view.frame.height
         case .top:
             topContainer.center = view.center
-            scrollView.center.y = view.center.y + view.frame.height
+            scrollContainer.center.y = view.center.y + view.frame.height
             centerContainer.center.y = view.center.y + view.frame.height
         default:
             scrollContainer.center = view.center
@@ -102,12 +136,47 @@ extension ViewController: PanControllerDelegate {
         }
     }
 
-    func view(_ panel: Panels) -> UIView {
+    func view(_ panel: Panel) -> UIView {
         switch panel {
         case .center: return scrollContainer
         case .top: return topContainer
         case .bottom: return bottomContainer
         default: return centerContainer
+        }
+    }
+}
+
+extension ViewController: ButtonsDelegate {
+    func scroll(to panel: Panel) {
+        shouldAnimate = scrollView.contentOffset.x == UIScreen.main.bounds.width || panel == .center
+
+        switch panel {
+        case .left: scrollView.setContentOffset(.zero, animated: true)
+        case .right: scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * 2, y: 0), animated: true)
+        case .center: scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width, y: 0), animated: true)
+        default: break
+        }
+    }
+
+    func backToCamera() {
+        UIView.animate(withDuration: 0.2) { self.present(.center) }
+    }
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        shouldAnimate = true
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if shouldAnimate {
+            let endColor: UIColor = scrollView.contentOffset.x < view.bounds.width ? .red : .blue
+            let offset = (scrollView.contentOffset.x / view.frame.width) - 1
+            scrollContainer.backgroundColor = UIColor.transition(from: .clear, to: endColor, with: abs(offset))
+            buttonsController.animateButtons(offset)
+        } else {
+            let offset = (scrollView.contentOffset.x / view.frame.width) / 2
+            scrollContainer.backgroundColor = UIColor.transition(from: .red, to: .blue, with: abs(offset))
         }
     }
 }

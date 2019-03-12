@@ -9,13 +9,13 @@
 import UIKit
 
 protocol PanControllerDelegate: class {
-    func present(_ panel: Panels)
-    func view(_ panel: Panels) -> UIView
+    func present(_ panel: Panel)
+    func view(_ panel: Panel) -> UIView
 }
 
 class PanController: UIViewController {
 
-    private var horizontalDirection: Panels = .center
+    private var horizontalDirection: Panel = .center
     private var originalCenter = CGPoint()
     private var topPanelCenter = CGPoint()
     private var bottomPanelCenter = CGPoint()
@@ -32,20 +32,26 @@ class PanController: UIViewController {
     }
 
     @objc private func handlePan(_ recognizer: UIPanGestureRecognizer) {
+        handle(velocity: recognizer.velocity(in: view).y/1000)
+        handle(translationOf: recognizer)
+    }
+
+    private func handle(velocity: CGFloat) {
+        /// 1. If velocity is high enought, scroll to desired view directly
+        switch velocity {
+        case _ where velocity > 0.5: horizontalDirection = .top
+        case _ where velocity < -0.5: horizontalDirection = .bottom
+        default: break
+        }
+    }
+
+    private func handle(translationOf recognizer: UIPanGestureRecognizer) {
         guard
             let scrollContainer = delegate?.view(.center),
             let mapContainer = delegate?.view(.top),
             let leaderboardsContainer = delegate?.view(.bottom),
             let cameraContainer = delegate?.view(.camera)
             else { return }
-
-        /// 1. If velocity is high enought, scroll to desired view directly
-        let velocity = recognizer.velocity(in: view).y/1000
-        switch velocity {
-        case _ where velocity > 0.5: horizontalDirection = .top
-        case _ where velocity < -0.5: horizontalDirection = .bottom
-        default: break
-        }
 
         let translation = recognizer.translation(in: view)
         /// 2. Log func to slow down dragging speed of scroll view
