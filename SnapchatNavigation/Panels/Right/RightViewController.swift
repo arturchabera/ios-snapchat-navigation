@@ -15,7 +15,7 @@ class RightViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .clear
-        containerView.layer.cornerRadius = 16.0
+        containerView.layer.cornerRadius = Layout.containerCornerRadius
         containerView.clipsToBounds = true
     }
 }

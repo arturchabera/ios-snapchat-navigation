@@ -16,5 +16,6 @@ enum Layout {
     static let centralButtonHeight: CGFloat = 60.0
     static let sideButtonHeight: CGFloat = 42.0
     static let sideButtonMargin: CGFloat = 32.0
-    static let distanceFromYCenter: CGFloat = 10
+    static let distanceFromYCenter: CGFloat = 10.0
+    static let containerCornerRadius: CGFloat = 16.0
 }

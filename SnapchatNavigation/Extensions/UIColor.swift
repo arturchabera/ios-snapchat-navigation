@@ -10,8 +10,8 @@ import UIKit
 
 extension UIColor {
     var components: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-        guard let components = self.cgColor.components else { fatalError("invalid color declaration") }
-        if self.cgColor.numberOfComponents == 2 {
+        guard let components = cgColor.components else { fatalError("invalid color declaration") }
+        if cgColor.numberOfComponents == 2 {
             return (r: components[0], g: components[0], b: components[0], a: components[1])
         } else {
             return (r: components[0], g: components[1], b: components[2], a: components[3])

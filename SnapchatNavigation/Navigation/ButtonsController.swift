@@ -17,9 +17,9 @@ class ButtonsController: UIViewController {
 
     weak var delegate: ButtonsDelegate?
 
-    private var leftButton: UIButton!
-    private var centerButton: UIButton!
-    private var rightButton: UIButton!
+    private var leftButton = UIButton.make(.left)
+    private var centerButton = UIButton.make(.center)
+    private var rightButton = UIButton.make(.right)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,6 @@ class ButtonsController: UIViewController {
     }
 
     private func setupUI() {
-        leftButton = UIButton.make(.left)
         leftButton.tag = 0
         leftButton.addTarget(self, action: #selector(changePanel(_:)), for: .touchUpInside)
         view.addSubview(leftButton)
@@ -37,7 +36,6 @@ class ButtonsController: UIViewController {
             leftButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -UIScreen.main.bounds.width / 2 + Layout.sideButtonMargin)
             ])
 
-        centerButton = UIButton.make(.center)
         centerButton.tag = 1
         centerButton.addTarget(self, action: #selector(changePanel(_:)), for: .touchUpInside)
         view.addSubview(centerButton)
@@ -46,7 +44,6 @@ class ButtonsController: UIViewController {
             centerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
 
-        rightButton = UIButton.make(.right)
         rightButton.tag = 2
         rightButton.addTarget(self, action: #selector(changePanel(_:)), for: .touchUpInside)
         view.addSubview(rightButton)
